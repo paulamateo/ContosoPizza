@@ -11,20 +11,18 @@ Learning objectives:
 You must implement **best practices RESTful web API design** according to [this page](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design).
 
 ## Layered architecture: Commands
-Create the MODELS, DATA and SERVICES layers:
-
-      dotnet new classlib -n ContosoPizza.Models -o Models -f net6.0
-      dotnet new classlib -n ContosoPizza.Data -o Data -f net6.0
-      dotnet new classlib -n ContosoPizza.Services -o Services -f net6.0
-
 Create the API:
 
       dotnet new webapi -n ContosoPizza.API -o API -f net6.0
 
+Create the MODELS and SERVICES layers:
+
+      dotnet new classlib -n ContosoPizza.Models -o Models -f net6.0
+      dotnet new classlib -n ContosoPizza.Services -o Services -f net6.0
+
 Referencing layers on each other:
 
-      dotnet add Data/ContosoPizza.Data.csproj reference Models/ContosoPizza.Models.csproj 
-      dotnet add Services/ContosoPizza.Services.csproj reference Data/ContosoPizza.Data.csproj
+      dotnet add Services/ContosoPizza.Services.csproj reference Models/ContosoPizza.Models.csproj
 
 Create the .sln file:
 
@@ -33,9 +31,7 @@ Create the .sln file:
 Referencing the layers in the `ContosoPizza.sln` file:
 
       dotnet sln add Models/ContosoPizza.Models.csproj
-      dotnet sln add Data/ContosoPizza.Data.csproj
       dotnet sln add Services/ContosoPizza.Services.csproj
-      dotnet sln add API/ContosoPizza.API.csproj
 
 Compilation of the .NET project:
 

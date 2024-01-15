@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "WzBiDDwNYvLlyaxEsZircA8lAjm0VUs2Dq+pjt4z1XM=",
-  "Source": "ContosoPizza.API",
-  "BasePath": "_content/ContosoPizza.API",
+  "Hash": "2nJvSxUV+PsHs10wQU8I/n0DwEo/5J8o0ynUd/R5R2Y=",
+  "Source": "ContosoPizza",
+  "BasePath": "_content/ContosoPizza",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
