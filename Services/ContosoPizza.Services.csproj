@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\Models\ContosoPizza.Models.csproj" />
     <ProjectReference Include="..\Data\ContosoPizza.Data.csproj" />
   </ItemGroup>
 
