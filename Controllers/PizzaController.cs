@@ -7,10 +7,26 @@ namespace ContosoPizza.Controllers {
     [Route("[controller]")]
     public class PizzaController : ControllerBase {
         private readonly IPizzaService _pizzaService;
+        private readonly ICustomerService _customerService;
 
-        public PizzaController(IPizzaService pizzaService) {
+        public PizzaController(IPizzaService pizzaService, ICustomerService customerService) {
             _pizzaService = pizzaService;
+            _customerService = customerService;
         }
+
+
+        //CUSTOMERS actions
+        //GET all action
+        [HttpGet]
+        public ActionResult<List<User>> GetAllCustomers() =>
+            _customerService.GetAll();
+
+
+
+
+
+
+
 
         // GET all action
         [HttpGet]
