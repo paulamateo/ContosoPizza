@@ -10,6 +10,8 @@ namespace ContosoPizza.Data {
         public PizzaRepository() {
             Pizzas = new List<Pizza>();
             LoadFromJson();
+
+            AppDomain.CurrentDomain.ProcessExit += EndProgram;
         }
 
         public void SaveToJson(List<Pizza> pizzas) {
@@ -35,6 +37,12 @@ namespace ContosoPizza.Data {
                 return new List<Pizza>();
             }
         }
+
+        private void EndProgram(object? sender, EventArgs e) {
+            SaveToJson(new List<Pizza>());
+        }
+
+
     }
   
 }
