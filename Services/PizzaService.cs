@@ -1,73 +1,44 @@
 ﻿using ContosoPizza.Models;
-using System.Text.Json;
+using ContosoPizza.Data;
 
 namespace ContosoPizza.Services {
 
-    public class PizzaService {
-        private List<Pizza> Pizzas { get; set; }
-        public int nextId = 1;
+    public class PizzaService : IPizzaService {
+        private readonly IPizzaRepository _repository;
 
-        public PizzaService() {
-            Pizzas = new List<Pizza>();
-            LoadFromJson();
+        public PizzaService(IPizzaRepository repository) {
+            _repository = repository;
         }
 
-        public List<Pizza> GetAll() => Pizzas;
+        public List<Pizza> GetAll() => _repository.LoadFromJson();
 
-        public Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
+        public Pizza? Get(int id) => _repository.LoadFromJson().FirstOrDefault(p => p.Id == id);
 
         public void Add(Pizza pizza) {
-            pizza.Id = nextId++;
-            Pizzas.Add(pizza);
-            SaveToJson();
+            var pizzas = _repository.LoadFromJson();
+            pizza.Id = pizzas.Count > 0 ? pizzas.Max(p => p.Id) + 1 : 1;
+            pizzas.Add(pizza);
+            _repository.SaveToJson(pizzas);
         }
 
         public void Delete(int id) {
-            var pizza = Get(id);
-            if(pizza is null)
-                return;
-
-            Pizzas.Remove(pizza);
-            SaveToJson();
+            var pizzas = _repository.LoadFromJson();
+            var pizza = pizzas.FirstOrDefault(p => p.Id == id);
+            if (pizza != null) {
+                pizzas.Remove(pizza);
+                _repository.SaveToJson(pizzas);
+            }
         }
 
         public void Update(Pizza pizza) {
-            var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
-            if(index == -1)
-                return;
-
-            Pizzas[index] = pizza;
-            SaveToJson();
-        }
-
-        private void SaveToJson() {
-            try {
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string jsonString = JsonSerializer.Serialize(Pizzas, options);
-                File.WriteAllText("inventory.json", jsonString);
-            }catch (FileNotFoundException e) {
-                Console.WriteLine($"Error: {e.Message}");
-            }catch (Exception e) {
-                Console.WriteLine($"Error: {e.Message}");
+            var pizzas = _repository.LoadFromJson();
+            var index = pizzas.FindIndex(p => p.Id == pizza.Id);
+            if (index != -1) {
+                pizzas[index] = pizza;
+                _repository.SaveToJson(pizzas);
             }
         }
 
-        private void LoadFromJson() {
-            try {
-                if (File.Exists("inventory.json")) {
-                    var jsonString = File.ReadAllText("inventory.json");
-                    Pizzas = JsonSerializer.Deserialize<List<Pizza>>(jsonString) ?? new List<Pizza>();
-                    nextId = Pizzas.Any() ? Pizzas.Max(p => p.Id) + 1 : 1;
-                }else {
-                    Pizzas = new List<Pizza>();
-                    nextId = 1;
-                }
-            }catch (FileNotFoundException e) {
-                Console.WriteLine($"Error: {e.Message}");
-            }catch (Exception e) {
-                Console.WriteLine($"Error: {e.Message}");
-            }
-        }
     }
-
+  
 }

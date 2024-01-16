@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paula\\Documents\\ContosoPizza\\ContosoPizza.csproj",
+      "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\ContosoPizza.csproj",
       "projectName": "ContosoPizza",
-      "projectPath": "C:\\Users\\paula\\Documents\\ContosoPizza\\ContosoPizza.csproj",
+      "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\ContosoPizza.csproj",
       "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paula\\Documents\\ContosoPizza\\obj\\",
+      "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -489,24 +489,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

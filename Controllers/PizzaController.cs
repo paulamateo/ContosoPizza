@@ -6,9 +6,9 @@ namespace ContosoPizza.Controllers {
     [ApiController]
     [Route("[controller]")]
     public class PizzaController : ControllerBase {
-        private readonly PizzaService _pizzaService;
+        private readonly IPizzaService _pizzaService;
 
-        public PizzaController(PizzaService pizzaService) {
+        public PizzaController(IPizzaService pizzaService) {
             _pizzaService = pizzaService;
         }
 

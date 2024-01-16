@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\ContosoPizza.Models.csproj" />
-    <ProjectReference Include="..\Data\ContosoPizza.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
