@@ -61,7 +61,7 @@ Containerize API (internal port 80).
 
 
 
-## Commands: .NET project + Docker
+## Commands
 Create MODELS, DATA, BUSINESS and API layers:
 
       dotnet new classlib -n ContosoPizza.Models -o Models -f net6.0
