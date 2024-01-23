@@ -10,38 +10,65 @@ Learning objectives:
 
 You must implement **best practices RESTful web API design** according to [this page](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design).
 
-## Hoppscotch: Web API Testing
-**GET all action**
-![image](https://github.com/paulamateo/ContosoPizza/assets/118843344/4fd5fbc8-59b6-4b8c-99fa-f5cbb02ca2dc)
+### Tete Pizza
+Now, you need to add (at least) the following entities:
+- Ingredients → A pizza has a list of ingredients.
+- Orders → An order consists of one or more pizzas, price, user (_tetes_)...
+- User → A _tete_ places an order and it contains its full name, address...
 
-**GET by Id action**
-![image](https://github.com/paulamateo/ContosoPizza/assets/118843344/4bc3e577-68e0-40b5-b666-696c5293dc15)
+Containerize API (internal port 80).
 
-**POST action**
-![image](https://github.com/paulamateo/ContosoPizza/assets/118843344/886bdb5a-ea25-4bba-bdc3-4fb03f0b75be)
 
-**PUT action**
-![image](https://github.com/paulamateo/ContosoPizza/assets/118843344/391facd3-222a-490a-a307-1fbe5b4f7fd1)
+## CRUD operations
+### Users
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Create | `POST` | `[HttpPost("/Users")]` | Create user |
+| Delete | `DELETE` | `[HttpDelete("/Users/{id}")]` | Delete user |
+| Update | `PUT` | `[HttpPut("/Users/{id}")]` | Update user |
+| Read | `GET` | `[HttpGet("/Users")]` | Get all users |
+| Read | `GET` | `[HttpGet("/Users/{id}")]` | Get users by id |
 
-**DELETE action**
-![image](https://github.com/paulamateo/ContosoPizza/assets/118843344/98178754-1f90-423d-afba-0d4844ea3528)
+### Orders
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Create | `POST` | `[HttpPost("/Users/{userId}/Orders")]` | Create order
+| Delete | `DELETE` | `HttpGet("/Orders/{orderId}")]` | Delete order
+| Update | `PUT` | `[HttpPut("/Orders/{id}")]` | Update order
+| Read | `GET` | `[HttpGet("/Orders")]` | Get all orders
+| Read | `GET` | `[HttpGet("/Orders/{orderId}")]` | Get order by id
+| Read | `GET` | `[HttpGet("/Users/{userId}/Orders")]` | Get all orders by the user
 
-## Commands
-Create the API:
+### Pizzas
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Create | `POST` | `[HttpPost("/Orders/{orderId}/Pizzas")]` | Create pizza
+| Delete | `DELETE` | `[HttpDelete("/Pizzas/{id}")]` | Delete pizza
+| Update | `PUT` | `[HttpPut("/Pizzas/{id}")]` | Update pizza
+| Read | `GET` | `[HttpGet("/Pizzas")]` | Get all pizzas
+| Read | `GET` | `[HttpGet("/Pizzas/{id}")]` | Get pizza by id
+| Read | `GET` | `[HttpGet("/Orders/{orderId}/Pizzas")]` | Get pizzas by the order
 
-      dotnet new webapi -n ContosoPizza.API -o API -f net6.0
+### Ingredients
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
+| Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
+| Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
+| Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
+| Read | `GET` | `[HttpGet("/Ingredients/{id}")]` | Get ingredient by id
 
-Create MODELS, DATA and SERVICES layers:
+
+
+
+## Commands: .NET project + Docker
+Create MODELS, DATA, BUSINESS and API layers:
 
       dotnet new classlib -n ContosoPizza.Models -o Models -f net6.0
       dotnet new classlib -n ContosoPizza.Data -o Data -f net6.0
-      dotnet new classlib -n ContosoPizza.Services -o Services -f net6.0
-
-Referencing layers on each other:
-
-      dotnet add Data/ContosoPizza.Data.csproj reference Models/ContosoPizza.Models.csproj
-      dotnet add Services/ContosoPizza.Services.csproj reference Models/ContosoPizza.Models.csproj
-
+      dotnet new classlib -n ContosoPizza.Business -o Business -f net6.0
+      dotnet new classlib -n ContosoPizza.API -o API -f net6.0
+      
 Create the .sln file:
 
       dotnet new sln -n ContosoPizza
@@ -50,7 +77,16 @@ Referencing the layers in the `ContosoPizza.sln` file:
 
       dotnet sln add Models/ContosoPizza.Models.csproj
       dotnet sln add Data/ContosoPizza.Data.csproj
-      dotnet sln add Services/ContosoPizza.Services.csproj
+      dotnet sln add Business/ContosoPizza.Business.csproj
+      dotnet sln add API/ContosoPizza.API.csproj
+
+Referencing layers on each other:
+
+      dotnet add Data/ContosoPizza.Data.csproj reference Models/ContosoPizza.Models.csproj
+      dotnet add Business/ContosoPizza.Business.csproj reference Models/ContosoPizza.Models.csproj
+      dotnet add API/ContosoPizza.API.csproj reference Business/ContosoPizza.Business.csproj
+      dotnet add API/ContosoPizza.API.csproj reference Data/ContosoPizza.Data.csproj
+      dotnet add API/ContosoPizza.API.csproj reference Models/ContosoPizza.Models.csproj
 
 Compilation of the .NET project:
 
