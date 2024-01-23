@@ -1,0 +1,254 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\API\\ContosoPizza.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\API\\ContosoPizza.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\API\\ContosoPizza.API.csproj",
+        "projectName": "ContosoPizza.API",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\API\\ContosoPizza.API.csproj",
+        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj"
+              },
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
+              },
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectName": "ContosoPizza.Business",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
+              },
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "projectName": "ContosoPizza.Data",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "projectName": "ContosoPizza.Models",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

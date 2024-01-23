@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ContosoPizza.Data/1.0.0": {
+        "dependencies": {
+          "ContosoPizza.Models": "1.0.0"
+        },
+        "runtime": {
+          "ContosoPizza.Data.dll": {}
+        }
+      },
+      "ContosoPizza.Models/1.0.0": {
+        "runtime": {
+          "ContosoPizza.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ContosoPizza.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ContosoPizza.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
