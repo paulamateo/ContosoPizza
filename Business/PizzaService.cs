@@ -38,7 +38,7 @@ namespace ContosoPizza.Business {
                 orders.Add(order);
                 _userService.UpdateUser(user);
                 _repository.SaveOrders(orders);
-                _repository.SaveUserPizzas(user, order.Pizzas);
+                // _repository.SaveUserPizzas(user, order.Pizzas);
             }
         }
 

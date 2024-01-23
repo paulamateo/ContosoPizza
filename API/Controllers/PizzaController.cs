@@ -66,7 +66,7 @@ namespace ContosoPizza.Controllers {
 
         //ORDERS
         [HttpPost("/Users/{userId}/Orders")] //CREATE
-        public IActionResult CreateOrder(int userId, [FromBody] Order order) {
+        public IActionResult CreateOrder(int userId, Order order) {
             _pizzaService.AddOrder(userId, order);
             return CreatedAtAction(nameof(GetOrdersByUser), new { userId = userId }, order);
         }
@@ -119,16 +119,12 @@ namespace ContosoPizza.Controllers {
 
         //PIZZAS
         [HttpPost("/Orders/{orderId}/Pizzas")] //CREATE
-        public IActionResult AddPizzasToOrder(int orderId, [FromBody] List<Pizza> pizzas) {
+        public IActionResult AddPizzasToOrder(int orderId, List<Pizza> pizzas) {
             try {
-                // Call the service method to add pizzas to the order
                 _pizzaService.AddPizzasToOrder(orderId, pizzas);
-
-                // You can return a success response if needed
-                return Ok("Pizzas added to the order successfully");
-            } catch (Exception ex) {
-                // Handle any exceptions and return an error response
-                return BadRequest($"Error adding pizzas to the order: {ex.Message}");
+                return Ok("Pizzas added to the order");
+            } catch (Exception e) {
+                return BadRequest($"Error: {e.Message}");
             }
         }
 
@@ -163,7 +159,7 @@ namespace ContosoPizza.Controllers {
             var order = _pizzaService.GetOrder(orderId);
 
             if (order == null) {
-                return NotFound(); // Devuelve 404 si no se encuentra el pedido.
+                return NotFound();
             }
 
             return order.Pizzas;
@@ -190,9 +186,9 @@ namespace ContosoPizza.Controllers {
         public IActionResult CreateIngredientToPizza(int pizzaId, List<Ingredient> ingredients) {
             try {
                 _pizzaService.AddIngredientsToPizza(pizzaId, ingredients);
-                return Ok("Ingredients added to the pizza successfully");
-            }catch (Exception ex) {
-                return BadRequest($"Error adding pizzas to the order: {ex.Message}");
+                return Ok("Ingredients added to the pizza");
+            }catch (Exception e) {
+                return BadRequest($"Error: {e.Message}");
             }
         }
         

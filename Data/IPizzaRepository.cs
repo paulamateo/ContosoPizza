@@ -20,7 +20,7 @@ namespace ContosoPizza.Data {
         void SavePizzas(List<Pizza> pizzas);
         List<Pizza> LoadPizzas();
 
-        void SaveUserPizzas(User user, List<Pizza> pizzas);
+        // void SaveUserPizzas(User user, List<Pizza> pizzas);
         List<Pizza> LoadUserPizzas(User user);
 
         void SaveToJson(List<Pizza> pizzas);
