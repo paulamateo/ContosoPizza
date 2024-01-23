@@ -30,7 +30,7 @@ namespace ContosoPizza.Data {
                 string jsonString = JsonSerializer.Serialize(users, options);
                 File.WriteAllText(_fileUsers, jsonString);
             }catch (Exception e) {
-                Console.WriteLine($"Error al guardar usuarios: {e.Message}");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
@@ -39,7 +39,7 @@ namespace ContosoPizza.Data {
                 var jsonString = File.ReadAllText(_fileUsers);
                 return JsonSerializer.Deserialize<List<User>>(jsonString) ?? new List<User>();
             }catch (Exception e) {
-                Console.WriteLine($"Error al devolver usuarios: {e.Message}");
+                Console.WriteLine($"Error: {e.Message}");
                 return new List<User>();
             }
         }

@@ -19,7 +19,7 @@ namespace ContosoPizza.Controllers {
         [HttpPost("/Users")] //CREATE
         public IActionResult CreateUser(User user) {
             _userService.AddUser(user);
-            return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+            return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
         [HttpDelete("/Users/{id}")] //DELETE
