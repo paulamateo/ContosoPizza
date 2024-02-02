@@ -20,6 +20,24 @@ Containerize API (internal port 80).
 
 
 ## CRUD operations
+### Pizzas
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Read | `GET` | `[HttpGet("/Pizzas")]` | Get all pizzas
+| Read | `GET` | `[HttpGet("/Pizzas/{id}")]` | Get pizza by id
+| Create | `POST` | `[HttpPost("/Pizzas")]` | Create pizza
+| Delete | `DELETE` | `[HttpDelete("/Pizzas/{id}")]` | Delete pizza
+| Update | `PUT` | `[HttpPut("/Pizzas/{id}")]` | Update pizza
+
+### Ingredients
+| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
+| ------------- | ------------- | ------------- | ------------- |
+| Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
+| Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
+| Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
+| Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
+| Read | `GET` | `[HttpGet("/Ingredients/{id}")]` | Get ingredient by id
+
 ### Users
 | CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
 | ------------- | ------------- | ------------- | ------------- |
@@ -39,24 +57,7 @@ Containerize API (internal port 80).
 | Read | `GET` | `[HttpGet("/Orders/{orderId}")]` | Get order by id
 | Read | `GET` | `[HttpGet("/Users/{userId}/Orders")]` | Get all orders by the user
 
-### Pizzas
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Orders/{orderId}/Pizzas")]` | Create pizza
-| Delete | `DELETE` | `[HttpDelete("/Pizzas/{id}")]` | Delete pizza
-| Update | `PUT` | `[HttpPut("/Pizzas/{id}")]` | Update pizza
-| Read | `GET` | `[HttpGet("/Pizzas")]` | Get all pizzas
-| Read | `GET` | `[HttpGet("/Pizzas/{id}")]` | Get pizza by id
-| Read | `GET` | `[HttpGet("/Orders/{orderId}/Pizzas")]` | Get pizzas by the order
 
-### Ingredients
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
-| Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
-| Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
-| Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
-| Read | `GET` | `[HttpGet("/Ingredients/{id}")]` | Get ingredient by id
 
 
 
