@@ -68,11 +68,11 @@ Containerize API (internal port 80).
 
 
 ## Commands
-Create MODELS, DATA, BUSINESS and API layers:
+Create MODELS, DATA, SERVICES and API layers:
 
       dotnet new classlib -n ContosoPizza.Models -o Models -f net6.0
       dotnet new classlib -n ContosoPizza.Data -o Data -f net6.0
-      dotnet new classlib -n ContosoPizza.Business -o Business -f net6.0
+      dotnet new classlib -n ContosoPizza.Services -o Services -f net6.0
       dotnet new classlib -n ContosoPizza.API -o API -f net6.0
       
 Create the .sln file:
@@ -83,14 +83,15 @@ Referencing the layers in the `ContosoPizza.sln` file:
 
       dotnet sln add Models/ContosoPizza.Models.csproj
       dotnet sln add Data/ContosoPizza.Data.csproj
-      dotnet sln add Business/ContosoPizza.Business.csproj
+      dotnet sln add Services/ContosoPizza.Services.csproj
       dotnet sln add API/ContosoPizza.API.csproj
 
 Referencing layers on each other:
 
       dotnet add Data/ContosoPizza.Data.csproj reference Models/ContosoPizza.Models.csproj
-      dotnet add Business/ContosoPizza.Business.csproj reference Models/ContosoPizza.Models.csproj
-      dotnet add API/ContosoPizza.API.csproj reference Business/ContosoPizza.Business.csproj
+      dotnet add Services/ContosoPizza.Services.csproj reference Models/ContosoPizza.Models.csproj
+      dotnet add Services/ContosoPizza.Services.csproj reference Data/ContosoPizza.Data.csproj
+      dotnet add API/ContosoPizza.API.csproj reference Services/ContosoPizza.Services.csproj
       dotnet add API/ContosoPizza.API.csproj reference Data/ContosoPizza.Data.csproj
       dotnet add API/ContosoPizza.API.csproj reference Models/ContosoPizza.Models.csproj
 
