@@ -32,7 +32,12 @@ Containerize API (internal port 80).
 ### Ingredients
 | CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
 | ------------- | ------------- | ------------- | ------------- |
+| Read | `GET` | `[HttpGet("/Pizzas/{pizzaId}/Ingredients")]` | Get all ingredients for a pizza
+| Read | `GET` | `[HttpGet("/Pizzas/{pizzaId}/Ingredients/{ingredientId}")]` | Get ingredient by id
 | Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
+| Delete | `DELETE` | `[HttpDelete("/Pizzas/{pizzaId}/Ingredients/{ingredientId}")]` | Delete ingredient
+
+
 | Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
 | Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
 | Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
