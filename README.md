@@ -36,16 +36,15 @@ Containerize API (internal port 80).
 | Read | `GET` | `[HttpGet("/Pizzas/{pizzaId}/Ingredients/{ingredientId}")]` | Get ingredient by id
 | Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
 | Delete | `DELETE` | `[HttpDelete("/Pizzas/{pizzaId}/Ingredients/{ingredientId}")]` | Delete ingredient
-
-
-| Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
-| Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
-| Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
-| Read | `GET` | `[HttpGet("/Ingredients/{id}")]` | Get ingredient by id
+| Update | `PUT` | `[HttpPut("/Pizzas/{pizzaId}/Ingredients/{ingredientId}")]` | Update ingredient
 
 ### Users
 | CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
 | ------------- | ------------- | ------------- | ------------- |
+
+
+
+
 | Create | `POST` | `[HttpPost("/Users")]` | Create user |
 | Delete | `DELETE` | `[HttpDelete("/Users/{id}")]` | Delete user |
 | Update | `PUT` | `[HttpPut("/Users/{id}")]` | Update user |
