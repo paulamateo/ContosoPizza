@@ -10,6 +10,12 @@ namespace ContosoPizza.Data {
         //USERS
         void SaveUsers(List<User> users);
         List<User> LoadUsers();
+
+
+        //pruebas
+        List<User> GetUsers();
+        User? GetUserById(int id);
+        void AddUser(User user);
     }
 
 }

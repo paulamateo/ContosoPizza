@@ -16,6 +16,54 @@ namespace ContosoPizza.Data {
             // AppDomain.CurrentDomain.ProcessExit += EndProgram;
         }
 
+        //Usuarios
+        public List<User> GetUsers() { //get all
+            return LoadUsers();
+        }
+
+        public User? GetUserById(int id) { //get by id
+            return LoadUsers().FirstOrDefault(u => u.Id == id);
+        }
+
+        public void AddUser(User user) {
+            var users = GetUsers();
+            user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
+            users.Add(user);
+            SaveUsers(users);
+        }
+
+        public List<User> LoadUsers() {
+            try {
+                if (File.Exists(_fileUsers)) {
+                    var jsonString = File.ReadAllText(_fileUsers);
+                    return JsonSerializer.Deserialize<List<User>>(jsonString) ?? new List<User>();
+                }else {
+                    return new List<User>();
+                }
+            }catch (Exception e) {
+                Console.WriteLine($"Error: {e.Message}");
+                return new List<User>();
+            }
+        }
+
+        public void SaveUsers(List<User> users) {
+            try {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string jsonString = JsonSerializer.Serialize(users, options);
+                File.WriteAllText(_fileUsers, jsonString);
+            }catch (Exception e) {
+                Console.WriteLine($"Error: {e.Message}");
+            }
+        }
+
+
+
+
+
+
+
+
+
 
         //PIZZAS
         public void SavePizzas(List<Pizza> pizzas) {
@@ -44,29 +92,8 @@ namespace ContosoPizza.Data {
 
 
         //USERS
-        public void SaveUsers(List<User> users) {
-            try {
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string jsonString = JsonSerializer.Serialize(users, options);
-                File.WriteAllText(_fileUsers, jsonString);
-            }catch (Exception e) {
-                Console.WriteLine($"Error: {e.Message}");
-            }
-        }
 
-        public List<User> LoadUsers() {
-            try {
-                if (File.Exists(_fileUsers)) {
-                    var jsonString = File.ReadAllText(_fileUsers);
-                    return JsonSerializer.Deserialize<List<User>>(jsonString) ?? new List<User>();
-                }else {
-                    return new List<User>();
-                }
-            }catch (Exception e) {
-                Console.WriteLine($"Error: {e.Message}");
-                return new List<User>();
-            }
-        }
+
 
         // private void EndProgram(object? sender, EventArgs e) {
         //     if (File.Exists(_filePizzas)) {

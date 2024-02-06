@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "Id": 1,
+    "Name": "Paula",
+    "Lastname": "Mateo",
+    "Address": "Zaragoza",
+    "Email": "a26619@svalero.com",
+    "PhoneNumber": "123456789",
+    "Orders": []
+  },
+  {
+    "Id": 2,
+    "Name": "Eva",
+    "Lastname": "Martin",
+    "Address": "Zaragoza",
+    "Email": "a26611@svalero.com",
+    "PhoneNumber": "123456789",
+    "Orders": []
+  },
+  {
+    "Id": 3,
+    "Name": "Filipino",
+    "Lastname": "Filipinez",
+    "Address": "Zaragoza",
+    "Email": "q@svalero.com",
+    "PhoneNumber": "123456789",
+    "Orders": []
+  }
+]

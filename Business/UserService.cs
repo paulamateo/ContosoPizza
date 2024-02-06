@@ -13,16 +13,32 @@ namespace ContosoPizza.Business {
 
 
         //USERS
-        public List<User> GetAllUsers() => _repository.LoadUsers();
+        // public List<User> GetAllUsers() => _repository.LoadUsers();
+        // public User? GetUserById(int id) => _repository.LoadUsers().FirstOrDefault(u => u.Id == id);
+        // public void AddUser(User user) {
+        //     var users = _repository.LoadUsers();
+        //     user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
+        //     users.Add(user);
+        //     _repository.SaveUsers(users);
+        // }
 
-        public User? GetUserById(int id) => _repository.LoadUsers().FirstOrDefault(u => u.Id == id);
-
-        public void AddUser(User user) {
-            var users = _repository.LoadUsers();
-            user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
-            users.Add(user);
-            _repository.SaveUsers(users);
+        public List<User> GetAllUsers() {
+            return _repository.GetUsers();
         }
+
+        public User? GetUserById(int id) {
+            return _repository.GetUserById(id);
+        }
+
+        public void CreateUser(User user) {
+            _repository.AddUser(user);
+        }
+        
+
+
+        
+
+ 
 
         public void DeleteUser(int id) {
             var users = _repository.LoadUsers();

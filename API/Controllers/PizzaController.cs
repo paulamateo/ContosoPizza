@@ -33,7 +33,7 @@ public class PizzaController : ControllerBase {
     [HttpPost("/Users")]
     public IActionResult AddUser(User user) {
         try {
-            _userService.AddUser(user);
+            _userService.CreateUser(user);
             return Ok("User created");
         }catch (Exception e) {
             return BadRequest($"Error: {e.Message}");
