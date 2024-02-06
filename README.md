@@ -19,44 +19,70 @@ Now, you need to add (at least) the following entities:
 Containerize API (internal port 80).
 
 
-## CRUD operations
+## Uso del programa
 ### Users
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Users")]` | Create user |
-| Delete | `DELETE` | `[HttpDelete("/Users/{id}")]` | Delete user |
-| Update | `PUT` | `[HttpPut("/Users/{id}")]` | Update user |
-| Read | `GET` | `[HttpGet("/Users")]` | Get all users |
-| Read | `GET` | `[HttpGet("/Users/{id}")]` | Get users by id |
+| POST  | DELETE | UPDATE | GET ALL | GET BY ID
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| `/Users` | `/Users/{uId}` | `/Users/{uId}` | `/Users` | `/Users/{uId}` | 
+
+**1º Crear un usuario**. Se le asignará un ID automáticamente.
+
+      {
+            "Name": ,
+            "Lastname": ,
+            "Address": ,
+            "Email": ,
+            "PhoneNumber": ,
+            "Orders": []
+      }
 
 ### Orders
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Users/{userId}/Orders")]` | Create order
-| Delete | `DELETE` | `HttpGet("/Orders/{orderId}")]` | Delete order
-| Update | `PUT` | `[HttpPut("/Orders/{id}")]` | Update order
-| Read | `GET` | `[HttpGet("/Orders")]` | Get all orders
-| Read | `GET` | `[HttpGet("/Orders/{orderId}")]` | Get order by id
-| Read | `GET` | `[HttpGet("/Users/{userId}/Orders")]` | Get all orders by the user
+| POST  | DELETE | UPDATE | GET ALL | GET BY ID
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| `/Orders` | `/Orders/{oId}` |  | `/Orders` | `/Orders/{oId}` | 
+
+**2º Crear un pedido**. Se le asignará un ID automáticamente. Necesitamos obligatoriamente poner el ID del usuario al que va a pertenecer el pedido (gracias a esto, los campos 'UserName' y 'UserAddress' se rellenarán automáticamente).
+
+      {
+            "UserId":
+      }
 
 ### Pizzas
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Orders/{orderId}/Pizzas")]` | Create pizza
-| Delete | `DELETE` | `[HttpDelete("/Pizzas/{id}")]` | Delete pizza
-| Update | `PUT` | `[HttpPut("/Pizzas/{id}")]` | Update pizza
-| Read | `GET` | `[HttpGet("/Pizzas")]` | Get all pizzas
-| Read | `GET` | `[HttpGet("/Pizzas/{id}")]` | Get pizza by id
-| Read | `GET` | `[HttpGet("/Orders/{orderId}/Pizzas")]` | Get pizzas by the order
+| POST | DELETE | UPDATE | GET ALL | GET BY ID
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| `/Orders/{oId}/Pizzas` | `/Pizzas/{pId}` | `/Pizzas/{pId}` | `/Pizzas` | `/Pizzas/{pId}`
+
+**3º Crear una pizza**. Se le asignará un ID automáticamente. El precio empezará en 5€, y se irá incrementando conforme se añadan ingredientes.
+
+      {
+            "Name": ,
+            "IsGlutenFree": ,
+            "Ingredients": []
+      }
 
 ### Ingredients
-| CRUD operation  | HTTP action verb | ASP.NET Core attribute + route (controller) | Description
-| ------------- | ------------- | ------------- | ------------- |
-| Create | `POST` | `[HttpPost("/Pizzas/{pizzaId}/Ingredients")]` | Create ingredient
-| Delete | `DELETE` | `[HttpDelete("/Ingredients/{id}")] ` | Delete ingredient
-| Update | `PUT` | `[HttpPut("/Ingredients/{id}")] ` | Update ingredient
-| Read | `GET` | `[HttpGet("/Ingredients")]` | Get all ingredients
-| Read | `GET` | `[HttpGet("/Ingredients/{id}")]` | Get ingredient by id
+| POST | DELETE | UPDATE | GET ALL | GET BY ID
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| `/Pizzas/{pId}/Ing.` | `/Pizzas/{pId}/Ing./{iId}` | `/Pizzas/{pId}/Ing./{iId}` | `/Pizzas/{pId}/Ing.` | `/Pizzas/{pId}/Ing./{iId}`
+
+**4º Crear un ingrediente.** Se le asignará un ID automáticamente.
+
+      {
+            "Name": ,
+            "Price": ,
+            "Calories": ,
+            "Carbohydrates": ,
+            "Proteins": ,
+            "Fats": ,
+            "Fiber": 
+      }
+
+
+
+
+
+
+
 
 
 
