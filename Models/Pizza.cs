@@ -6,5 +6,5 @@ public class Pizza {
     public bool IsGlutenFree { get; set; }
     public decimal Price { get; set; }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-
+    
 }

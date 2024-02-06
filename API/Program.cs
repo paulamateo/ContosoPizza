@@ -4,6 +4,7 @@ using ContosoPizza.Business;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IPizzaService, PizzaService>();
 builder.Services.AddSingleton<IUserService, UserService>();
@@ -22,9 +23,6 @@ var app = builder.Build();
 //     app.UseSwaggerUI();
 // }
 
-app.UseSwagger();
-app.UseSwaggerUI();
-
 // app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -32,4 +30,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
