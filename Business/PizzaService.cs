@@ -15,14 +15,14 @@ namespace ContosoPizza.Business {
         //PIZZAS
         public List<Pizza> GetAllPizzas() => _repository.LoadPizzas();
 
-        public Pizza? GetPizzaById(int id) => _repository.LoadPizzas().FirstOrDefault(p => p.Id == id);
+        public Pizza? GetPizzaById(int id) => _repository.LoadPizzas().FirstOrDefault(p => p.PizzaId == id);
 
         public void AddPizza(int orderId, Pizza pizza) {
             var users = _repository.LoadUsers();
-            var order = users.SelectMany(u => u.Orders).FirstOrDefault(o => o.Id == orderId);
+            var order = users.SelectMany(u => u.Orders).FirstOrDefault(o => o.OrderId == orderId);
 
             if (order != null) {
-                pizza.Id = order.Pizzas.Count > 0 ? order.Pizzas.Max(p => p.Id) + 1 : 1;
+                pizza.PizzaId = order.Pizzas.Count > 0 ? order.Pizzas.Max(p => p.PizzaId) + 1 : 1;
                 pizza.Price = 5;
                 order.Pizzas.Add(pizza);
                 _repository.SavePizzas(order.Pizzas);
@@ -36,7 +36,7 @@ namespace ContosoPizza.Business {
 
             foreach (var user in users) {
                 foreach (var order in user.Orders) {
-                    var pizzaToRemove = order.Pizzas.FirstOrDefault(p => p.Id == id);
+                    var pizzaToRemove = order.Pizzas.FirstOrDefault(p => p.PizzaId == id);
 
                     if (pizzaToRemove != null) {
                         order.Pizzas.Remove(pizzaToRemove);
@@ -44,7 +44,7 @@ namespace ContosoPizza.Business {
                 }
             }
 
-            var pizza = pizzas.FirstOrDefault(p => p.Id == id);
+            var pizza = pizzas.FirstOrDefault(p => p.PizzaId == id);
             if (pizza != null) {
                 foreach (var user in users) {
                     foreach (var order in user.Orders) {
@@ -64,14 +64,14 @@ namespace ContosoPizza.Business {
 
             foreach (var user in users) {
                 foreach (var order in user.Orders) {
-                    var index = order.Pizzas.FindIndex(p => p.Id == pizza.Id);
+                    var index = order.Pizzas.FindIndex(p => p.PizzaId == pizza.PizzaId);
                     if (index != -1) {
                         order.Pizzas[index] = pizza;
                     }
                 }
             }
 
-            var pizzaIndex = pizzas.FindIndex(p => p.Id == pizza.Id);
+            var pizzaIndex = pizzas.FindIndex(p => p.PizzaId == pizza.PizzaId);
             if (pizzaIndex != -1) {
                 pizzas[pizzaIndex] = pizza;
                 _repository.SavePizzas(pizzas);
@@ -90,7 +90,7 @@ namespace ContosoPizza.Business {
             var pizza = GetPizzaById(pizzaId);
 
             if (pizza != null) {
-                var ingredient = pizza.Ingredients.FirstOrDefault(i => i.Id == ingredientId); 
+                var ingredient = pizza.Ingredients.FirstOrDefault(i => i.IngredientId == ingredientId); 
                 return ingredient;
             } else {
                 return null;
@@ -101,9 +101,9 @@ namespace ContosoPizza.Business {
             var pizza = GetPizzaById(pizzaId);
 
             if (pizza != null) {
-                ingredient.Id = pizza.Ingredients.Count > 0 ? pizza.Ingredients.Max(i => i.Id) + 1 : 1;
+                ingredient.IngredientId = pizza.Ingredients.Count > 0 ? pizza.Ingredients.Max(i => i.IngredientId) + 1 : 1;
                 pizza.Ingredients.Add(ingredient);
-                pizza.Price += ingredient.Price;
+                pizza.Price += ingredient.IngredientPrice;
                 UpdatePizza(pizza);
             }
         }
@@ -112,11 +112,11 @@ namespace ContosoPizza.Business {
             var pizza = GetPizzaById(pizzaId);
 
             if (pizza != null) {
-                var ingredient = pizza.Ingredients.FirstOrDefault(i => i.Id == ingredientId);
+                var ingredient = pizza.Ingredients.FirstOrDefault(i => i.IngredientId == ingredientId);
 
                 if (ingredient != null) {
                     pizza.Ingredients.Remove(ingredient);
-                    pizza.Price -= ingredient.Price;
+                    pizza.Price -= ingredient.IngredientPrice;
                     UpdatePizza(pizza);
                 }
             }
@@ -126,11 +126,11 @@ namespace ContosoPizza.Business {
             var pizza = GetPizzaById(pizzaId);
 
             if (pizza != null) {
-                var existingIngredient = pizza.Ingredients.FirstOrDefault(i => i.Id == ingredientId);
+                var existingIngredient = pizza.Ingredients.FirstOrDefault(i => i.IngredientId == ingredientId);
 
                 if (existingIngredient != null) {
-                    existingIngredient.Name = updatedIngredient.Name;
-                    existingIngredient.Price = updatedIngredient.Price;
+                    existingIngredient.IngredientName = updatedIngredient.IngredientName;
+                    existingIngredient.IngredientPrice = updatedIngredient.IngredientPrice;
                     existingIngredient.Calories = updatedIngredient.Calories;
                     existingIngredient.Carbohydrates = updatedIngredient.Carbohydrates;
                     existingIngredient.Proteins = updatedIngredient.Proteins;

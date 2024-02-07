@@ -13,15 +13,15 @@ namespace ContosoPizza.Business {
 
 
         //USERS
-        // public List<User> GetAllUsers() => _repository.LoadUsers();
-        // public User? GetUserById(int id) => _repository.LoadUsers().FirstOrDefault(u => u.Id == id);
-        // public void AddUser(User user) {
-        //     var users = _repository.LoadUsers();
-        //     user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
-        //     users.Add(user);
-        //     _repository.SaveUsers(users);
-        // }
-
+        /*
+            public void AddUser(User user) {
+                var users = _repository.LoadUsers();
+                user.UserId = users.Count > 0 ? users.Max(u => u.UserId) + 1 : 1;
+                users.Add(user);
+                _repository.SaveUsers(users);
+            }
+        */
+        
         public List<User> GetAllUsers() {
             return _repository.GetUsers();
         }
@@ -33,16 +33,10 @@ namespace ContosoPizza.Business {
         public void CreateUser(User user) {
             _repository.AddUser(user);
         }
-        
-
-
-        
-
- 
 
         public void DeleteUser(int id) {
             var users = _repository.LoadUsers();
-            var user = users.FirstOrDefault(u => u.Id == id);
+            var user = users.FirstOrDefault(u => u.UserId == id);
             if (user != null) {
                 users.Remove(user);
                 _repository.SaveUsers(users);
@@ -51,7 +45,7 @@ namespace ContosoPizza.Business {
 
         public void UpdateUser(User user) {
             var users = _repository.LoadUsers();
-            var index = users.FindIndex(u => u.Id == user.Id);
+            var index = users.FindIndex(u => u.UserId == user.UserId);
             if (index != -1) {
                 users[index] = user;
                 _repository.SaveUsers(users);
@@ -68,17 +62,17 @@ namespace ContosoPizza.Business {
 
         public Order? GetOrderById(int orderId) {
             var users = _repository.LoadUsers();
-            var order = users.SelectMany(u => u.Orders).FirstOrDefault(o => o.Id == orderId);
+            var order = users.SelectMany(u => u.Orders).FirstOrDefault(o => o.OrderId == orderId);
 
             return order;
         }
 
         public void AddOrder(int userId, Order order) {
             var users = _repository.LoadUsers();
-            var user = users.FirstOrDefault(u => u.Id == userId);
+            var user = users.FirstOrDefault(u => u.UserId == userId);
 
             if (user != null) {
-                order.Id = user.Orders.Count > 0 ? user.Orders.Max(o => o.Id) + 1 : 1;
+                order.OrderId = user.Orders.Count > 0 ? user.Orders.Max(o => o.OrderId) + 1 : 1;
                 order.UserName = user.Name;
                 order.UserAddress = user.Address;
                 user.Orders.Add(order);
@@ -90,10 +84,10 @@ namespace ContosoPizza.Business {
 
         public void DeleteOrder(int orderId) {
             var users = _repository.LoadUsers();
-            var userWithOrder = users.FirstOrDefault(u => u.Orders.Any(o => o.Id == orderId));
+            var userWithOrder = users.FirstOrDefault(u => u.Orders.Any(o => o.OrderId == orderId));
 
             if (userWithOrder != null) {
-                var orderToRemove = userWithOrder.Orders.First(o => o.Id == orderId);
+                var orderToRemove = userWithOrder.Orders.First(o => o.OrderId == orderId);
                 userWithOrder.Orders.Remove(orderToRemove);
                 _repository.SaveUsers(users);
             }else {

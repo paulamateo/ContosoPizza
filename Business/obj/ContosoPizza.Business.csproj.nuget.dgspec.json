@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
+    "D:\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
+    "D:\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectUniqueName": "D:\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "projectName": "ContosoPizza.Business",
-        "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectPath": "D:\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\obj\\",
+        "outputPath": "D:\\ContosoPizza\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
-                "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
+              "D:\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+                "projectPath": "D:\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
               },
-              "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
-                "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+    "D:\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "projectUniqueName": "D:\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
         "projectName": "ContosoPizza.Data",
-        "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "projectPath": "D:\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
         "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Data\\obj\\",
+        "outputPath": "D:\\ContosoPizza\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,8 +98,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
-                "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
               }
             }
           }
@@ -114,6 +114,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
@@ -139,14 +143,14 @@
         }
       }
     },
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+    "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "projectUniqueName": "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
         "projectName": "ContosoPizza.Models",
-        "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "projectPath": "D:\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
         "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Models\\obj\\",
+        "outputPath": "D:\\ContosoPizza\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

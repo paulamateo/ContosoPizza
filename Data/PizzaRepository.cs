@@ -22,12 +22,12 @@ namespace ContosoPizza.Data {
         }
 
         public User? GetUserById(int id) { //get by id
-            return LoadUsers().FirstOrDefault(u => u.Id == id);
+            return LoadUsers().FirstOrDefault(u => u.UserId == id);
         }
 
         public void AddUser(User user) {
             var users = GetUsers();
-            user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
+            user.UserId = users.Count > 0 ? users.Max(u => u.UserId) + 1 : 1;
             users.Add(user);
             SaveUsers(users);
         }
@@ -57,14 +57,6 @@ namespace ContosoPizza.Data {
         }
 
 
-
-
-
-
-
-
-
-
         //PIZZAS
         public void SavePizzas(List<Pizza> pizzas) {
             try {
@@ -89,11 +81,6 @@ namespace ContosoPizza.Data {
                 return new List<Pizza>();
             }
         }
-
-
-        //USERS
-
-
 
         // private void EndProgram(object? sender, EventArgs e) {
         //     if (File.Exists(_filePizzas)) {

@@ -54,7 +54,7 @@ public class PizzaController : ControllerBase {
 
     [HttpPut("/Users/{id}")]
     public IActionResult UpdateUser(int id, User user) {
-        if (id != user.Id)
+        if (id != user.UserId)
             return BadRequest();
 
         var existingUser = _userService.GetUserById(id);
@@ -141,7 +141,7 @@ public class PizzaController : ControllerBase {
 
     [HttpPut("/Pizzas/{id}")]
     public IActionResult UpdatePizza(int id, Pizza pizza) {
-        if (id != pizza.Id)
+        if (id != pizza.PizzaId)
             return BadRequest();
 
         var existingPizza = _pizzaService.GetPizzaById(id);
