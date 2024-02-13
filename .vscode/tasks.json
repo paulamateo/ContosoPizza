@@ -9,7 +9,7 @@
                 "build",
                 "${workspaceFolder}/API/ContosoPizza.API.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -21,7 +21,7 @@
                 "publish",
                 "${workspaceFolder}/API/ContosoPizza.API.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/API/ContosoPizza.API.csproj",
+                "${workspaceFolder}/API/ContosoPizza.API.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

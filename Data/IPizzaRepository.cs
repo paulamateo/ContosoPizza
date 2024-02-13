@@ -3,29 +3,18 @@ using ContosoPizza.Models;
 namespace ContosoPizza.Data {
 
     public interface IPizzaRepository {
-
-        //USERS
-        void SaveUsers(List<User> users);
-        List<User> LoadUsers();
-
-        //INGREDIENTS
-        void SaveIngredients(List<Ingredient> ingredients);
-        List<Ingredient> LoadIngredients();
-
-        //ORDERS
-        void SaveOrders(List<Order> orders);
-        List<Order> LoadOrders();
-
-        //PIZZAS
-        void SavePizzas(List<Pizza> pizzas);
-        List<Pizza> LoadPizzas();
-
-        // void SaveUserPizzas(User user, List<Pizza> pizzas);
-        List<Pizza> LoadUserPizzas(User user);
-
-        void SaveToJson(List<Pizza> pizzas);
-        List<Pizza> LoadFromJson();
-    
-    }   
+        List<Pizza> GetAllPizzas();
+        Pizza? GetPizza(int pizzaId);
+        List<Pizza> GetAllPizzasByOrder(int orderId);
+        void AddPizza(int orderId, Pizza pizza);
+        void DeletePizza(int pizzaId);
+        void UpdatePizza(Pizza pizza);
+        List<Ingredient> GetAllIngredientsByPizza(int pizzaId);
+        List<Ingredient> GetAllIngredients();
+        Ingredient GetIngredient(int ingredientId);
+        void AddIngredient(int pizzaId, Ingredient ingredient);
+        void DeleteIngredient(int ingredientId);
+        void UpdateIngredient(int ingredientId, Ingredient updatedIngredient);
+    }
 
 }

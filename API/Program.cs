@@ -2,13 +2,19 @@ using ContosoPizza.Data;
 using ContosoPizza.Business;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPizzaService, PizzaService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPizzaRepository, PizzaRepository>();
+
+var connectionString = builder.Configuration.GetConnectionString("PizzaDB");
+
+builder.Services.AddScoped<IUserRepository, UserSqlRepository>(serviceProvider => 
+    new UserSqlRepository(connectionString));
 
 // Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddSingleton<IPizzaService, PizzaService>();
-builder.Services.AddSingleton<IUserService, UserService>();
-builder.Services.AddSingleton<IPizzaRepository, PizzaRepository>();
 
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,13 +23,10 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
-// {
-//     app.UseSwagger();
-//     app.UseSwaggerUI();
-// }
-
-app.UseSwagger();
-app.UseSwaggerUI();
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // app.UseHttpsRedirection();
 
@@ -32,4 +35,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

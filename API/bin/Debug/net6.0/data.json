@@ -1,0 +1,41 @@
+[
+  {
+    "UserId": 1,
+    "UserName": "Paaaaula",
+    "UserLastname": "Mateo",
+    "Address": "zgz",
+    "Email": null,
+    "PhoneNumber": null,
+    "Orders": [
+      {
+        "OrderId": 3,
+        "TotalPrice": 5,
+        "UserName": "Paaaaula",
+        "UserAddress": "zgz",
+        "Pizzas": [
+          {
+            "PizzaId": 1,
+            "PizzaName": "Margarita",
+            "IsGlutenFree": false,
+            "PizzaPrice": 5,
+            "OrderId": 3,
+            "Ingredients": [
+              {
+                "IngredientId": 1,
+                "IngredientName": "tomatito",
+                "IngredientPrice": 1.60,
+                "Calories": 0,
+                "Carbohydrates": 0,
+                "Proteins": 0,
+                "Fats": 0,
+                "Fiber": 0,
+                "PizzaId": 1
+              }
+            ]
+          }
+        ],
+        "UserId": 1
+      }
+    ]
+  }
+]

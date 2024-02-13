@@ -1,42 +1,49 @@
-using ContosoPizza.Models;
 using ContosoPizza.Data;
+using ContosoPizza.Models;
 
 namespace ContosoPizza.Business {
 
     public class UserService : IUserService {
+        private readonly IUserRepository _userRepository;
 
-        private readonly IPizzaRepository _repository;
-
-        public UserService(IPizzaRepository repository) {
-            _repository = repository;
+        public UserService(IUserRepository userRepository) {
+            _userRepository = userRepository;
         }
 
 
-        public List<User> GetAllUsers() => _repository.LoadUsers();
-        public User? GetUser(int id) => _repository.LoadUsers().FirstOrDefault(p => p.Id == id);
+        //USERS
+        public List<User> GetAllUsers() => _userRepository.GetAllUsers();
 
-        public void AddUser(User user) {
-            var users = _repository.LoadUsers();
-            user.Id = users.Count > 0 ? users.Max(p => p.Id) + 1 : 1;
-            users.Add(user);
-            _repository.SaveUsers(users);
+        public User? GetUser(int userId) => _userRepository.GetUser(userId);
+
+        public void CreateUser(User newUser) {
+            List<User> _users = GetAllUsers();
+            newUser.UserId = _users.Count > 0 ? _users.Max (u => u.UserId) + 1 : 1;
+            _userRepository.AddUser(newUser);
         }
 
-        public void DeleteUser(int id) {
-            var users = _repository.LoadUsers();
-            var user = users.FirstOrDefault(i => i.Id == id);
-            if (user != null) {
-                users.Remove(user);
-                _repository.SaveUsers(users);
+        public void DeleteUser(int userId) => _userRepository.DeleteUser(userId);
+
+        public void UpdateUser(User user) => _userRepository.UpdateUser(user);
+
+
+        //ORDERS
+        public List<Order> GetAllOrders() => _userRepository.GetAllOrders();
+        public Order? GetOrder(int orderId) => _userRepository.GetOrder(orderId);
+
+        public void CreateOrder(int userId, Order order) {
+            try {
+                _userRepository.AddOrder(userId, order);
+            }catch (Exception e) {
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
-        public void UpdateUser(User user) {
-            var users = _repository.LoadUsers();
-            var index = users.FindIndex(u => u.Id == user.Id);
-            if (index != -1) {
-                users[index] = user;
-                _repository.SaveUsers(users);
+        public void DeleteOrder(int orderId) {
+            try {
+                _userRepository.DeleteOrder(orderId);
+            }catch (Exception e) {
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
