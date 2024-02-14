@@ -17,10 +17,10 @@ namespace ContosoPizza.Data {
         public void AddPizza(int orderId, Pizza pizza) {
             var order = _userContext.GetOrder(orderId);
             if (order is null) {
-                throw new KeyNotFoundException("Order not found.");
+                throw new KeyNotFoundException("Order not found");
             }
             _context.Pizzas.Add(pizza);
-            // _userContext.SaveToJson();
+            // SaveToJson();
         }
 
         public Pizza? GetPizza(int pizzaId) {
@@ -41,10 +41,7 @@ namespace ContosoPizza.Data {
         }
 
         public List<Pizza> GetAllPizzasByOrder(int orderId) {
-            return _context.Pizzas
-                                .Where(p => p.OrderId == orderId)
-                                .Include(p => p.PizzaId)
-                                .ToList();
+            return _context.Pizzas.ToList();
         }
 
 

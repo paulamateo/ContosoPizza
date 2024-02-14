@@ -86,7 +86,7 @@ namespace ContosoPizza.Data {
         
         public List<Ingredient> GetAllIngredients() {
             List<User> users = _userRepository.GetAllUsers();
-            var ingredients = users.SelectMany(u => u.Orders.SelectMany(o => o.Pizzas.SelectMany(p => p.Ingredients))).ToList();
+            var ingredients = users.SelectMany(u => u.Orders.SelectMany(o => o.Pizzas.SelectMany(p => p.PizzaIngredient))).ToList();
             return ingredients;
         }
 

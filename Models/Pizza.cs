@@ -12,8 +12,8 @@ namespace ContosoPizza.Models {
         
         [ForeignKey("Order")]
         public int OrderId { get; set; }
-        public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-
+        // public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+        public List<PizzaIngredient>? PizzaIngredient { get; set; }
     }
 
 }

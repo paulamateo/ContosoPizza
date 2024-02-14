@@ -42,13 +42,13 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("User not found.");
             }
             _context.Users.Remove(user);
-            SaveToJson();
+            // SaveToJson();
         }
 
         //ORDERS
-        public List<Order> GetAllOrders() {
-            return _context.Orders();
-        }
+        // public List<Order> GetAllOrders() {
+        //     return _context.Orders();
+        // }
 
         public void AddOrder(int userId, Order order) {
             var user = GetUser(userId);
@@ -56,7 +56,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("User not found.");
             }else {
                 _context.Orders.Add(order);
-                SaveToJson();
+                // SaveToJson();
             }
         }
 
@@ -70,7 +70,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Order not found.");
             }
             _context.Orders.Remove(order);
-            SaveToJson();
+            // SaveToJson();
         }
 
     }
