@@ -7,7 +7,7 @@ builder.Services.AddScoped<IPizzaService, PizzaService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPizzaRepository, PizzaRepository>();
 
-var connectionString = builder.Configuration.GetConnectionString("PizzaDB");
+var connectionString = builder.Configuration.GetConnectionString("ServerDB");
 
 builder.Services.AddScoped<IUserRepository, UserSqlRepository>(serviceProvider => 
     new UserSqlRepository(connectionString));

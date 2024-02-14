@@ -16,7 +16,7 @@ namespace ContosoPizza.Data {
             List<User> users = new List<User>();
             using (var connection = new SqlConnection(_connectionString)) {
                 connection.Open();
-                string sqlString = "SELECT * FROM Users";
+                string sqlString = "SELECT * FROM Users"; /*corregir*/
                 var command = new SqlCommand(sqlString, connection);
                 using (var reader = command.ExecuteReader()) {
                     while (reader.Read()) {
@@ -38,7 +38,7 @@ namespace ContosoPizza.Data {
         public User? GetUser(int userId) {
             using (var connection = new SqlConnection(_connectionString)) {
                 connection.Open();
-                string sqlString = "SELECT * FROM Users WHERE UserId = @UserId";
+                string sqlString = "SELECT * FROM Users WHERE UserId = @UserId";  /*corregir*/
                 var command = new SqlCommand(sqlString, connection);
                 command.Parameters.AddWithValue("@UserId", userId);
                 connection.Open();
@@ -71,7 +71,7 @@ namespace ContosoPizza.Data {
                     command.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
                     command.ExecuteNonQuery();
                 }catch (Exception e) {
-                    Console.WriteLine($"Error to add user: {e.Message}");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
         }
@@ -85,7 +85,7 @@ namespace ContosoPizza.Data {
                     command.Parameters.AddWithValue("@UserId", userId);
                     command.ExecuteNonQuery();
                 }catch (Exception e) {
-                    Console.WriteLine($"Error to delete user: {e.Message}");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace ContosoPizza.Data {
                     command.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
                     command.ExecuteNonQuery();
                 }catch (Exception e) {
-                    Console.WriteLine($"Error to update user: {e.Message}");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace ContosoPizza.Data {
             using (var connection = new SqlConnection(_connectionString)) {
                 try {
                     connection.Open();
-                    string sqlString = "SELECT * FROM Orders WHERE OrderId = @OrderId";
+                    string sqlString = "SELECT * FROM Orders WHERE OrderId = @OrderId";  /*corregir*/
                     var command = new SqlCommand(sqlString, connection);
                     command.Parameters.AddWithValue("@OrderId", orderId);
                     using (var reader = command.ExecuteReader()) {
@@ -173,7 +173,7 @@ namespace ContosoPizza.Data {
                     command.Parameters.AddWithValue("@UserId", order.UserId);
                     command.ExecuteNonQuery();
                 }catch (Exception e) {
-                    Console.WriteLine($"Error to add order: {e.Message}");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
         }
@@ -187,7 +187,7 @@ namespace ContosoPizza.Data {
                     command.Parameters.AddWithValue("@OrderId", orderId);
                     command.ExecuteNonQuery();
                 }catch (Exception e) {
-                    Console.WriteLine($"Error to delete order: {e.Message}");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
         }

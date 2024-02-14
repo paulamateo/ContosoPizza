@@ -43,7 +43,7 @@ namespace ContosoPizza.Data {
                 var pizzas = users.SelectMany(u => u.Orders.SelectMany(o => o.Pizzas.Select(p => p.PizzaId)));
                 int maxId = pizzas.Any() ? pizzas.Max() : 0;
                 pizza.PizzaId = ++maxId;
-                pizza.PizzaPrice = 5;
+                // pizza.PizzaPrice = 5;
                 order.Pizzas.Add(pizza);
                 _userRepository.SaveToJson(users);
             }

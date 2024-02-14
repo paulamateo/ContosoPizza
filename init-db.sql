@@ -39,3 +39,27 @@ CREATE TABLE Ingredients(
     PizzaId INT NOT NULL,
     CONSTRAINT FK_Ingredients_Pizzas FOREIGN KEY (PizzaId) REFERENCES Pizzas(PizzaId)
 );
+
+INSERT INTO Users (UserId, UserName, UserLastname, Address, Email, PhoneNumber) VALUES
+    (1, "Paula", "Mateo", "Zaragoza", "a26619@svalero.com", "123456789"),
+    (2, "Eva", "Martin", "Zaragoza", "a26611@svalero.com", "123456789");
+
+INSERT INTO Orders (OrderId, TotalPrice, UserId) VALUES
+    (1,  22.60, 1),
+    (2, 15.70, 2);
+
+INSERT INTO Pizzas (PizzaId, PizzaName, IsGlutenFree, PizzaPrice, OrderId) VALUES
+    (1, "Margherita", false, 11.90, 1),
+    (2, "Pepperoni", true, 10.70, 1),
+    (3, "Four cheese", false, 15.70, 2);
+
+-- INSERT INTO Ingredients (IngredientId, IngredientName, IngredientPrice, Calories, Carbohydrates, Proteins, Fats, Fiber, PizzaId) VALUES
+--     ()
+
+SELECT * FROM Users;
+
+SELECT * FROM Orders;
+
+SELECT * FROM Pizzas;
+
+SELECT * FROM Ingredients;
