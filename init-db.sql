@@ -40,6 +40,10 @@ CREATE TABLE Ingredients(
     CONSTRAINT FK_Ingredients_Pizzas FOREIGN KEY (PizzaId) REFERENCES Pizzas(PizzaId)
 );
 
+-- CREATE TABLE PizzaIngredient(
+
+-- );
+
 INSERT INTO Users (UserId, UserName, UserLastname, Address, Email, PhoneNumber) VALUES
     (1, "Paula", "Mateo", "Zaragoza", "a26619@svalero.com", "123456789"),
     (2, "Eva", "Martin", "Zaragoza", "a26611@svalero.com", "123456789");

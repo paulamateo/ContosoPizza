@@ -1,5 +1,6 @@
 using ContosoPizza.Data;
 using ContosoPizza.Business;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUserService, UserService>();
@@ -9,8 +10,12 @@ builder.Services.AddScoped<IPizzaRepository, PizzaRepository>();
 
 var connectionString = builder.Configuration.GetConnectionString("ServerDB");
 
-builder.Services.AddScoped<IUserRepository, UserSqlRepository>(serviceProvider => 
-    new UserSqlRepository(connectionString));
+// builder.Services.AddScoped<IUserRepository, UserSqlRepository>(serviceProvider => 
+//     new UserSqlRepository(connectionString));
+
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(connectionString));
+  builder.Services.AddScoped<IUserRepository, UserEFRepository>();
 
 // Add services to the container.
 

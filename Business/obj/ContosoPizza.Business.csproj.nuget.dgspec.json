@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
+    "c:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
+    "c:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectUniqueName": "c:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "projectName": "ContosoPizza.Business",
-        "projectPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectPath": "c:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\obj\\",
+        "outputPath": "c:\\Users\\S2-PC00\\Documents\\ContosoPizza\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

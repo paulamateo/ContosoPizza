@@ -10,22 +10,22 @@ namespace ContosoPizza.Data {
             _context = context;
         }
 
-        public void SaveToJson(List<User> users) {
-            _context.SaveToJson();
-        }
+        // public void SaveToJson(List<User> users) {
+        //     _context.SaveToJson();
+        // }
 
-        public List<User> LoadFromJson() {
-            _context.LoadFromJson();
-        }
+        // public List<User> LoadFromJson() {
+        //     _context.LoadFromJson();
+        // }
 
         //USERS
-        public List<User> GetAllUsers() {
-            return LoadFromJson();
-        }
+        // public List<User> GetAllUsers() {
+        //     return LoadFromJson();
+        // }
 
         public void AddUser(User user) {
             _context.Users.Add(user);
-            SaveToJson();
+            // SaveToJson();
         }
 
         public User? GetUser(int userId) {

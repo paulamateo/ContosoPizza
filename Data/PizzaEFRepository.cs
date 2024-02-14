@@ -20,7 +20,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Order not found.");
             }
             _context.Pizzas.Add(pizza);
-            _userContext.SaveToJson();
+            // _userContext.SaveToJson();
         }
 
         public Pizza? GetPizza(int pizzaId) {
@@ -37,7 +37,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Pizza not found.");
             }
             _context.Pizzas.Remove(pizza);
-            SaveToJson();
+            // SaveToJson();
         }
 
         public List<Pizza> GetAllPizzasByOrder(int orderId) {
@@ -59,10 +59,10 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Pizza not found.");
             }
             _context.Ingredients.Add(ingredient);
-            SaveToJson();
+            // SaveToJson();
         }
 
-        public Ingredient GetIngredient(int ingredientId) {
+        public Ingredient? GetIngredient(int ingredientId) {
             return _context.Ingredients.FirstOrDefault(i => i.IngredientId == ingredientId);
         }
 
@@ -72,7 +72,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Ingredient not found.");
             }
             _context.Entry(ingredient).State = EntityState.Modified;
-            SaveToJson();
+            // SaveToJson();
         }
 
         public void DeleteIngredient(int ingredientId) {
@@ -81,7 +81,7 @@ namespace ContosoPizza.Data {
                 throw new KeyNotFoundException("Ingredient not found.");
             }
             _context.Ingredients.Remove(ingredient);
-            SaveToJson();
+            // SaveToJson();
         }
 
         public List<Ingredient> GetAllIngredientsByPizza(int pizzaId) {

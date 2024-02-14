@@ -16,7 +16,7 @@ namespace ContosoPizza.Data {
             List<User> users = new List<User>();
             using (var connection = new SqlConnection(_connectionString)) {
                 connection.Open();
-                string sqlString = "SELECT * FROM Users"; /*corregir*/
+                string sqlString = "SELECT UserId, UserName, UserLastname, Address, Email, PhoneNumber FROM Users"; /*corregir*/
                 var command = new SqlCommand(sqlString, connection);
                 using (var reader = command.ExecuteReader()) {
                     while (reader.Read()) {
@@ -38,7 +38,7 @@ namespace ContosoPizza.Data {
         public User? GetUser(int userId) {
             using (var connection = new SqlConnection(_connectionString)) {
                 connection.Open();
-                string sqlString = "SELECT * FROM Users WHERE UserId = @UserId";  /*corregir*/
+                string sqlString = "SELECT UserId, UserName, UserLastname, Address, Email, PhoneNumber FROM Users WHERE UserId = @UserId";  /*corregir*/
                 var command = new SqlCommand(sqlString, connection);
                 command.Parameters.AddWithValue("@UserId", userId);
                 connection.Open();
@@ -113,7 +113,7 @@ namespace ContosoPizza.Data {
             using (var connection = new SqlConnection(_connectionString)) {
                 try {
                     connection.Open();
-                    string sqlString = "SELECT * FROM Orders";
+                    string sqlString = "SELECT OrderId, TotalPrice, UserName, UserAddress, UserId FROM Orders";
                     var command = new SqlCommand(sqlString, connection);
                     using (var reader = command.ExecuteReader()) {
                         while (reader.Read()) {
@@ -138,7 +138,7 @@ namespace ContosoPizza.Data {
             using (var connection = new SqlConnection(_connectionString)) {
                 try {
                     connection.Open();
-                    string sqlString = "SELECT * FROM Orders WHERE OrderId = @OrderId";  /*corregir*/
+                    string sqlString = "SELECT OrderId, TotalPrice, UserName, UserAddress, UserId FROM Orders WHERE OrderId = @OrderId";  /*corregir*/
                     var command = new SqlCommand(sqlString, connection);
                     command.Parameters.AddWithValue("@OrderId", orderId);
                     using (var reader = command.ExecuteReader()) {
