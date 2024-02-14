@@ -70,8 +70,8 @@ namespace ContosoPizza.Data {
             using (var connection = new SqlConnection(_connectionString)) {
                 try {
                     connection.Open();
-                    string query = @"SELECT P.PizzaId, P.PizzaName, P.PizzaPrice, P.IsGlutenFree, P.OrderId FROM Pizzas P INNER JOIN OrdersPizza OP ON P.PizzaId = OP.PizzaId WHERE OP.OrderId = @OrderId";  
-                    var command = new SqlCommand(query, connection);
+                    string sqlString = @"SELECT P.PizzaId, P.PizzaName, P.PizzaPrice, P.IsGlutenFree, P.OrderId FROM Pizzas P INNER JOIN OrdersPizza OP ON P.PizzaId = OP.PizzaId WHERE OP.OrderId = @OrderId";  
+                    var command = new SqlCommand(sqlString, connection);
                     command.Parameters.AddWithValue("@OrderId", orderId);
                     using (var reader = command.ExecuteReader()) {
                         while (reader.Read()) {

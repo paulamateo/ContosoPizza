@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "projectName": "ContosoPizza.Business",
-        "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\ContosoPizza.Business.csproj",
         "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Business\\obj\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
-                "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj"
               },
-              "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
-                "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
               }
             }
           }
@@ -60,18 +60,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
         "projectName": "ContosoPizza.Data",
-        "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\ContosoPizza.Data.csproj",
         "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Data\\obj\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -86,8 +86,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
-                "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
+              "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+                "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj"
               }
             }
           }
@@ -102,6 +102,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
@@ -123,18 +131,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
+    "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "projectUniqueName": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
         "projectName": "ContosoPizza.Models",
-        "projectPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
+        "projectPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\ContosoPizza.Models.csproj",
         "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paula\\Downloads\\final2\\final\\final\\ContosoPizza\\Models\\obj\\",
+        "outputPath": "C:\\Users\\paula\\OneDrive\\Documentos\\ContosoPizza\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -176,7 +184,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }
