@@ -1,0 +1,79 @@
+[
+  {
+    "UserId": 1,
+    "UserName": "Paula",
+    "UserLastname": "Mateo",
+    "Address": "Zaragoza",
+    "Email": "a26619@svalero.com",
+    "PhoneNumber": "123456789",
+    "Orders": [
+      {
+        "OrderId": 1,
+        "TotalPrice": 22.60,
+        "UserId": 1,
+        "UserName": "Paula",
+        "UserAddress": "Zaragoza",
+        "Pizzas": [
+          {
+            "PizzaId": 1,
+            "PizzaName": "Margherita",
+            "IsGlutenFree": false,
+            "PizzaPrice": 11.90,
+            "Ingredients": [
+              {
+                "IngredientId": 1,
+                "IngredientName": "Tomato sauce",
+                "IngredientPrice": 1.30,
+                "Calories": 20,
+                "Carbohydrates": 5,
+                "Proteins": 1,
+                "Fats": 0,
+                "Fiber": 2
+              },
+              {
+                "IngredientId": 2,
+                "IngredientName": "Mozzarella cheese",
+                "IngredientPrice": 2,
+                "Calories": 80,
+                "Carbohydrates": 1,
+                "Proteins": 6,
+                "Fats": 6,
+                "Fiber": 0
+              },
+              {
+                "IngredientId": 3,
+                "IngredientName": "Tomatoes",
+                "IngredientPrice": 2.60,
+                "Calories": 18,
+                "Carbohydrates": 4,
+                "Proteins": 1,
+                "Fats": 0,
+                "Fiber": 1
+              },
+              {
+                "IngredientId": 4,
+                "IngredientName": "Basil",
+                "IngredientPrice": 1,
+                "Calories": 1,
+                "Carbohydrates": 0,
+                "Proteins": 0,
+                "Fats": 0,
+                "Fiber": 0
+              },
+              {
+                "IngredientId": 5,
+                "IngredientName": "Neapolitan dough",
+                "IngredientPrice": 5,
+                "Calories": 260,
+                "Carbohydrates": 50,
+                "Proteins": 8,
+                "Fats": 3,
+                "Fiber": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
